@@ -5,7 +5,6 @@ import glob
 import ROOT
 import importlib
 import Analysis.Job as Job
-import Analysis.Disclaimer as DC
 from multiprocessing import Pool 
 
 def buildProcessingDict(configuration, samples):
@@ -48,7 +47,16 @@ def main( argv ):
     """
     Main function to be executed when starting the code.
     """
-    DC.printDisclaimer()
+    message = """
+    ---------------------DISCLAIMER---------------------
+    This Software is intended for educational use only!
+    Under no circumstances does it qualify to reproduce
+    actual ATLAS analysis results or produce publishable
+    results!
+    ----------------------------------------------------
+    """
+
+    print message
     
     # global configuration
     parser = argparse.ArgumentParser( description = 'Analysis Tool using XMLs' )

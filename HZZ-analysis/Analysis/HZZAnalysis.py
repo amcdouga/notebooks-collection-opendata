@@ -4,7 +4,9 @@ import math
 
 import Analysis
 import AnalysisHelpers as AH
-import Constants
+
+Z_Mass = 91.188;
+H_Mass = 125.18;
 
 #======================================================================
         
@@ -33,7 +35,6 @@ class HZZAnalysis(Analysis.Analysis):
       self.hist_lepd0        =  self.addStandardHistogram("lep_d0")
 
       self.hist_etmiss       = self.addStandardHistogram("etmiss")
-
     
   def analyze(self):
       # retrieving objects
@@ -54,7 +55,6 @@ class HZZAnalysis(Analysis.Analysis):
       # find ZZ Candidate
       candidate = self.ZZCandidate(goodLeptons)
       if candidate is None: return False;
-
  
       # ZZ system histograms
       self.invMassZ1.Fill((candidate[0].tlv() + candidate[1].tlv()).M(), weight)
