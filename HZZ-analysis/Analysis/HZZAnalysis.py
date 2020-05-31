@@ -2,9 +2,9 @@ import ROOT
 import itertools 
 import math
 
-from Analysis import Analysis
-from Analysis import AnalysisHelpers
-from Analysis import Constants
+import Analysis
+import AnalysisHelpers as AH
+import Constants
 
 #======================================================================
         
@@ -41,7 +41,7 @@ class HZZAnalysis(Analysis.Analysis):
       weight = eventinfo.scalefactor()*eventinfo.eventWeight() if not self.getIsData() else 1
 
       # retrieve Leptons  
-      goodLeptons = AnalysisHelpers.selectAndSortContainer(self.Store.getLeptons(), isGoodLepton, lambda p: p.pt())
+      goodLeptons = AH.selectAndSortContainer(self.Store.getLeptons(), isGoodLepton, lambda p: p.pt())
       if not len(goodLeptons) == 4: return False
       self.countEvent("4 leptons", weight)
 
@@ -72,7 +72,6 @@ class HZZAnalysis(Analysis.Analysis):
       [self.hist_leptID.Fill(lep.pdgId(), weight) for lep in goodLeptons]
       [self.hist_leptptc.Fill(lep.isoptconerel30(), weight) for lep in goodLeptons]
       [self.hist_leptetc.Fill(lep.isoetconerel20(), weight) for lep in goodLeptons]
-
       return True
   
   def finalize(self):

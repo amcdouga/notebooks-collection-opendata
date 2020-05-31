@@ -3,7 +3,7 @@ import importlib
 import sys
 import time
 
-from Analysis import JobStatistics
+import JobStatistics
 
 #======================================================================
 
@@ -61,7 +61,7 @@ class Job(object):
         
     def execute(self):
       self.log("Now looping over %d events" % self.MaxEvents)
-      for n in range(self.MaxEvents):
+      for n in xrange(self.MaxEvents):
         self.JobStatistics.updateStatus(n)
         self.InputTree.GetEntry(n)
         self.Analysis.doAnalysis()
@@ -69,7 +69,7 @@ class Job(object):
     def finalize(self):
       self.JobStatistics.updateStatus(self.MaxEvents, True)
       if not self.Configuration["Batch"]:
-          print("")
+          print ""
       self.Analysis.doFinalization()
       self.OutputFile.Close()
       self.log("finished successfully. Total time: %4.0fs" % self.JobStatistics.elapsedTime())
@@ -89,7 +89,7 @@ class Job(object):
       self.JobStatistics.setMaxEvents(self.MaxEvents)
 
     def log(self, message):
-      print(time.ctime() + " Job " + self.Name + ": " + message)
+      print time.ctime() + " Job " + self.Name + ": " + message
               
         
 

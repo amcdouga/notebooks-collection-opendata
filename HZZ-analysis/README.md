@@ -2,11 +2,11 @@
 
 
 ## Introduction
-The framework makes use of the [Python language](https://www.python.org) and is interfaced with [ROOT](https://root.cern.ch/), and is available under this [Github link](https://github.com/atlas-outreach-data-tools/atlas-outreach-PyROOT-framework-13tev). After cloning/downloading the repository, the only thing you need to have is Python installed. The master version of this framework uses python3. The python2 branch uses python2.
+The framework makes use of the [Python language](https://www.python.org) and is interfaced with [ROOT](https://root.cern.ch/), and is available under this [Github link](https://github.com/atlas-outreach-data-tools/atlas-outreach-PyROOT-framework-13tev). After cloning/downloading the repository, the only thing you need to have is Python installed. This python2 branch of the framework uses python2. The master branch uses python3.
 
 The 13 TeV ATLAS Open Data are **hosted** on the [CERN Open Data portal](http://opendata.cern.ch/) and [ATLAS Open Data portal](http://opendata.atlas.cern) in this [documentation](../datasets/files.md). The framework can access the samples in two ways:
 
-+ reading them online directly (by default, they are stored in an [**online repository**](https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/));
++ reading them online directly (by default, they are stored in an [**online repository**](https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/))
 + reading them form a local storage (the samples need to be downloaded locally).
 
 The framework consists of **two main parts**:
@@ -29,13 +29,13 @@ The files in the root directory of the installation are the various run scripts.
 
 As a first test to check whether everything works fine you can simply run a preconfigured analyis via
 
->     python3 RunScript.py -s "Zmumu"
+>     python RunScript.py -s "Zmumu"
 
 What you have done here is to run the code in single core mode and specifying that you only want to analyse the Zmumu sample 
 as defined in the Configurations/HZZConfiguration.py. 
 The runscript has several options which may be displayed by typing
 
->     python3 RunScript.py --help
+>     python RunScript.py --help
 
 The options include:
 
@@ -71,7 +71,7 @@ scaling factors for correct plotting.
 
 Now we want to run over the full set of available samples. For this simply type:
 
->     python3 RunScript.py
+>     python RunScript.py
 
 Use the options -p and -n if you have a multi core system and want to use multiple cores.
 Execution times are ~ 40 minutes in single core mode or ~ 25 minutes in multi core mode with 4 nodes.
@@ -94,11 +94,11 @@ The plotting code is located in the **Plotting** folder and contains the followi
 
 Results may be plotted via:
 
-> python3 PlotResults.py Configuration/PlotConf\_AnalysisName.py
+> python PlotResults.py Configuration/PlotConf\_AnalysisName.py
 
 In our example case the name of the analysis is *HZZAnalysis*, so type:
 
-> python3 PlotResults.py Configuration/PlotConf\_HZZAnalysis.py
+> python PlotResults.py Configuration/PlotConf\_HZZAnalysis.py
 
 The resulting histograms will be put into the _Output_ directory.
 

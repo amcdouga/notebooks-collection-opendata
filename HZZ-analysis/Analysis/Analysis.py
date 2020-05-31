@@ -1,9 +1,9 @@
 import ROOT
 import time
 
-from Analysis import TupleReader
-from Analysis import HistManager
-from Analysis import EventCounter
+import TupleReader as reader
+import HistManager
+import EventCounter
 
 #======================================================================
 
@@ -20,7 +20,7 @@ class Analysis(object):
         self.isData       = False
 
         # Functionality providers
-        self.Store        = TupleReader.TupleReader()
+        self.Store        = reader.TupleReader()
         self.EventCounter = EventCounter.EventCounter(self.TotName)
         self.HistManager  = HistManager.HistManager(self.TotName)
 
