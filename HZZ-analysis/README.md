@@ -22,16 +22,11 @@ The framework consists of **two main parts**:
 + the **analysis** part, located within the "Analysis" directory: it performs the particular object selection and stores the output histograms;
 + the **plotting** part, located within the "Plotting" directory: it makes the final Data / Prediction plots.
 
-![](Main_folder.png)
-
 ---
-
 
 ## General Usage
 ### Analysis
 The analysis code is located in the **Analysis** folder, with files corresponding to the examples of physics analysis documented in [Physics analysis examples](../physics/intro.md). The naming of the analysis files follows a simple rule: "NNAnalysis", where NN can be *HZZ* for example.
-
-![](Analysis_folder.png)
 
 The files in the root directory of the installation are the various run scripts. Configuration files can be found in the *Configurations* folder. 
 
@@ -86,8 +81,6 @@ Execution times are ~ 40 minutes in single core mode or ~ 25 minutes in multi co
 
 If everything was successful, the code will create in the results directory (**resultsNN**) a new file with the name of the corresponding sample (data_A, ttbar_lep,...).
 
-![](RunScript_output.png)
-
 ### Plotting
 
 The plotting code is located in the **Plotting** folder and contains the following files:
@@ -97,8 +90,6 @@ The plotting code is located in the **Plotting** folder and contains the followi
 + Paintable definitions (**Paintable.py**): splits the problem of plotting something into logical pieces;
 + Plot style (**PlotStyle.py**): The general style that is to be applied is defined here;
 + infofile (**infofile.py**): MC sample name, DSID, number of events, reduction efficiency, sum of weights and cross-section.
-
-![](Plotting_folder.png)
 
 Results may be plotted via:
 
@@ -197,8 +188,6 @@ Agreement type plots are typically used to evaluate the agreement between two pa
 The order of the depictions is determined in line 2 of the code example above.
 
 If everything was successful, the code will create in the output directory (**Output**) the corresponding plots defined in **Configurations/PlotConf\_AnalysisName.py**.
-
-![](Plotting_output.png)
 
 ## In Depth Information
 
