@@ -11,6 +11,7 @@
 # Run this script by typing:							       #
 #       >> python A-simple-example.py						       #
 #										       #
+#	At the end you get a plot with the number of leptons.			       #
 ########################################################################################
 
 #ROOT is imported to read the files in the .root data format.
