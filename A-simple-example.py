@@ -35,7 +35,7 @@ hist = ROOT.TH1F("variable","Example plot: Number of leptons; Number of leptons;
 for event in tree:
     hist.Fill(tree.lep_n)
 
-print "Histogram is filled" # Signified the end of the event loop above
+print "Histogram is filled" # Signifies the end of the event loop above
  
 # Now want to draw the histogram, and set the fill colour
 hist.SetLineColor(ROOT.kBlack) 
@@ -71,3 +71,16 @@ try:
 except:
     raw_input('Press Enter to exit')
 
+##############################################################################################################################################
+#
+#       Exercise to try: How could you select to have exactly 2 leptons (i.e. lep_n ==2) ? 
+# 		You can check if you've done it correctly by looking at the resulting histograms. What do you expect will change? 
+#		What do you notice about the number of entries in the histogram now? 
+# 		*Hint*: There's a comment above indicating where in the code you should place your cuts. 
+#
+#	Bonus exercise: Can you try plotting another variable, instead of "number of leptons" 
+#		e.g. What about the pT of the leptons? 
+# 		*Hint*: the pT variable is labelled "" in the tree. 
+#		You might also need to change the x-axis range of the histogram. 
+#
+##############################################################################################################################################
