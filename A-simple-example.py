@@ -18,10 +18,10 @@
 import ROOT
 
 # Here we open the data that we want to analyse, which is in the form of a .root file. A .root file consists of a tree having branches and leaves.
-f = ROOT.TFile.Open("/Users/ashleymcdougall/Desktop/notebooks-collection-opendata/HZZ-analysis/Input/mc_105987.WZ.root")
+f = ROOT.TFile.Open("HZZ-analysis/Input/mc_105987.WZ.root")
 
-# Define a 'canvas' on which to draw a histogram. Its name is "Canvas" and its header is "plot a variable". The two following arguments define the width and the height of the canvas.
-canvas = ROOT.TCanvas("Canvas","plot a variable",800,600)
+# Define a 'canvas' on which to draw a histogram. Its name is "canvas" and its header is "plot a variable". The two following arguments define the width and the height of the canvas.
+canvas = ROOT.TCanvas("canvas","plot a variable",800,600)
 
 # Here we define a tree named "tree" to extract the data from the input .root file.
 tree = f.Get("mini")
@@ -44,8 +44,8 @@ hist.SetLineWidth(2)
 hist.SetFillColor(ROOT.kAzure)
 hist.Draw("HIST")
 
-# Print the canvas, which contains the histogram
-canvas.Print()
+# Draw the canvas, which contains the histogram
+canvas.Draw()
 
 # The following lines allow the canvas to be displayed, 
 #	until you press enter in the command line.
