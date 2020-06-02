@@ -79,9 +79,9 @@ except:
 #		What do you notice about the number of entries in the histogram now? 
 # 		*Hint*: There's a comment above indicating where in the code you should place your cuts. 
 #
-#	Bonus exercise: Can you try plotting another variable, instead of "number of leptons" 
-#		e.g. What about the pT of the leptons? 
-# 		*Hint*: the pT variable is labelled "" in the tree. 
+#	Bonus exercise: Can you try plotting another variable instead of "number of leptons"? 
+#		e.g. What about the number of jets? 
+# 		*Hint*: the number of jets variable is labelled "jet_n" in the tree. 
 #		You might also need to change the x-axis range of the histogram. 
 #
 ##############################################################################################################################################
