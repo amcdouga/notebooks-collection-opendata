@@ -22,7 +22,7 @@ f = ROOT.TFile.Open("HZZ-analysis/Input/mc_105987.WZ.root")
 
 # Define a 'canvas' on which to draw a histogram. Its name is "canvas" and its header is "plot a variable". The two following arguments define the width and the height of the canvas.
 canvas = ROOT.TCanvas("canvas","plot a variable",800,600)
-
+canvas.cd()
 # Here we define a tree named "tree" to extract the data from the input .root file.
 tree = f.Get("mini")
 number_entries = tree.GetEntries()
@@ -45,7 +45,7 @@ hist.SetFillColor(ROOT.kAzure)
 hist.Draw("HIST")
 
 # Draw the canvas, which contains the histogram
-canvas.Draw()
+canvas.Update()
 
 # The following lines allow the canvas to be displayed, 
 #	until you press enter in the command line.
